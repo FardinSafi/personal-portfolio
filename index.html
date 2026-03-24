@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fardin Abrar Safi | AI Engineer & Computer Engineering Student</title>
+  <meta name="description" content="Portfolio of Fardin Abrar Safi, AI Engineer and Computer Engineering student building end-to-end AI products for healthcare and education." />
+  <meta name="keywords" content="Fardin Abrar Safi, AI Engineer, Computer Engineering, Healthcare AI, MedGemma, Qwen, IBM Watsonx, HKUST" />
+  <meta name="author" content="Fardin Abrar Safi" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fardin Abrar Safi | AI Engineer & Computer Engineering Student" />
+  <meta property="og:description" content="I build and deploy end-to-end AI products for government and healthcare clients, with focus on reliable multilingual systems." />
+  <meta property="og:url" content="https://yourusername.github.io/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fardin Abrar Safi | AI Engineer & Computer Engineering Student" />
+  <meta name="twitter:description" content="Building practical AI for healthcare and education through full-stack engineering and model deployment." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80" />
+  <link rel="canonical" href="https://yourusername.github.io/" />
+
+  <script>
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: "#0A2540",
+              emerald: "#10B981",
+              ink: "#0E1A2B"
+            }
+          },
+          fontFamily: {
+            display: ["Sora", "ui-sans-serif", "system-ui", "sans-serif"],
+            body: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"]
+          },
+          boxShadow: {
+            glass: "0 12px 40px rgba(0, 0, 0, 0.25)"
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      color-scheme: dark light;
+    }
+
+    body {
+      font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.16), transparent 42%),
+        radial-gradient(circle at 85% 15%, rgba(28, 100, 242, 0.2), transparent 38%),
+        linear-gradient(180deg, #071425 0%, #081a2f 45%, #06111f 100%);
+    }
+
+    .light-bg {
+      background:
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.1), transparent 40%),
+        radial-gradient(circle at 85% 0%, rgba(8, 145, 178, 0.1), transparent 35%),
+        linear-gradient(180deg, #f3f8ff 0%, #eef8f4 100%);
+    }
+
+    .glass-card {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(10, 37, 64, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    body.light {
+      color: #0f172a;
+    }
+
+    body.light header {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-color: rgba(148, 163, 184, 0.45) !important;
+    }
+
+    body.light header a,
+    body.light header button,
+    body.light header .text-slate-200,
+    body.light header .text-slate-100 {
+      color: #0f172a !important;
+    }
+
+    body.light .glass-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    body.light .glass-card * {
+      color: #0f172a;
+    }
+
+    body.light .text-white,
+    body.light .text-slate-100,
+    body.light .text-slate-200,
+    body.light .text-slate-300 {
+      color: #0f172a !important;
+    }
+
+    body.light .bg-slate-900\/50,
+    body.light .bg-slate-900\/40,
+    body.light .bg-slate-800\/80,
+    body.light .bg-slate-800\/90 {
+      background-color: rgba(226, 232, 240, 0.7) !important;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px) scale(0.995);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .section-block {
+      padding-top: 5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .section-block {
+        padding-top: 6.5rem;
+      }
+    }
+
+    section[id] {
+      scroll-margin-top: 6.5rem;
+    }
+
+    .nav-link.active {
+      color: #6ee7b7 !important;
+    }
+
+    .mobile-link {
+      border-radius: 0.5rem;
+      padding: 0.4rem 0.6rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .mobile-link:hover {
+      background-color: rgba(16, 185, 129, 0.14);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Fardin Abrar Safi",
+    "email": "mailto:fasafi@connect.ust.hk",
+    "telephone": "+85295058342",
+    "url": "https://yourusername.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/fardin-abrar-safi-5a9a3820a/",
+      "https://github.com/yourusername"
+    ],
+    "jobTitle": "Computer Engineering Student & Artificial Intelligence Engineer",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "The Hong Kong University of Science and Technology"
+    },
+    "knowsLanguage": ["Bengali", "English", "Urdu", "Hindi", "French", "Cantonese", "Mandarin"],
+    "knowsAbout": ["Healthcare AI", "Educational AI", "Machine Learning", "Multilingual NLP", "Full Stack Development"]
+  }
+  </script>
+</head>
+<body class="text-slate-100 antialiased dark:bg-transparent light:bg-transparent">
+  <a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-emerald-400 focus:px-3 focus:py-2 focus:text-slate-900">
+    Skip to content
+  </a>
+
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-700/40 bg-slate-950/65 backdrop-blur-md dark:bg-slate-950/65">
+    <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
+      <a href="#home" class="font-display text-lg font-bold tracking-wide text-emerald-300" aria-label="Go to Home section">
+        Fardin Abrar Safi
+      </a>
+      <button id="mobileMenuBtn" class="rounded-md border border-slate-500/50 p-2 text-slate-200 md:hidden" aria-label="Open mobile menu" aria-controls="mobileMenu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+      <div class="hidden items-center gap-4 md:flex">
+        <a href="#home" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Home</a>
+        <a href="#about" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">About</a>
+        <a href="#experience" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Experience</a>
+        <a href="#projects" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Projects</a>
+        <a href="#blog" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Blog</a>
+        <a href="#skills" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Skills</a>
+        <a href="#contact" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Contact</a>
+        <button id="themeToggle" class="rounded-full border border-emerald-400/50 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-emerald-200 transition hover:bg-emerald-400/20" aria-label="Toggle dark and light mode">
+          Toggle Theme
+        </button>
+        <a href="resume.pdf" class="rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:scale-[1.02] hover:bg-emerald-300" aria-label="Download resume PDF">
+          Download Resume
+        </a>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-slate-700/50 bg-slate-950/90 px-4 py-4 md:hidden">
+      <div class="flex flex-col gap-3">
+        <a href="#home" class="mobile-link text-slate-100">Home</a>
+        <a href="#about" class="mobile-link text-slate-100">About</a>
+        <a href="#experience" class="mobile-link text-slate-100">Experience</a>
+        <a href="#projects" class="mobile-link text-slate-100">Projects</a>
+        <a href="#blog" class="mobile-link text-slate-100">Blog</a>
+        <a href="#skills" class="mobile-link text-slate-100">Skills</a>
+        <a href="#contact" class="mobile-link text-slate-100">Contact</a>
+        <button id="themeToggleMobile" class="rounded-md border border-emerald-400/40 px-3 py-2 text-left text-emerald-200">Toggle Theme</button>
+        <a href="resume.pdf" class="rounded-md bg-emerald-400 px-3 py-2 font-semibold text-slate-950">Download Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="mx-auto w-full max-w-6xl px-4 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+    <section class="relative overflow-hidden rounded-3xl border border-slate-700/50 px-6 py-12 shadow-glass fade-in sm:px-10 lg:px-12 lg:py-16" aria-label="Hero section">
+      <div class="pointer-events-none absolute -right-14 top-8 h-56 w-56 rounded-full bg-emerald-400/20 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-16 -left-12 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl"></div>
+      <div class="relative grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+        <div>
+          <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-400/35 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-200">
+            HKUST Computer Engineering
+          </p>
+          <h1 class="font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+            SAFI, Fardin Abrar
+          </h1>
+          <p class="mt-3 text-base font-semibold text-emerald-200 sm:text-lg">
+            Computer Engineering Student & AI Engineer | Building AI for Healthcare & Education
+          </p>
+          <p class="mt-5 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
+            I build and deploy end-to-end AI products for government and healthcare clients, turning complex clinical workflows into secure and practical software.
+            My work spans multilingual conversational interfaces, medical question-generation systems, and model reliability improvements for high-stakes environments.
+            I also design product-ready web experiences that transform prototypes into tools teams can confidently adopt.
+          </p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="resume.pdf" class="rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-emerald-300" aria-label="Download resume">
+              Download Resume
+            </a>
+            <a href="https://www.linkedin.com/in/fardin-abrar-safi-5a9a3820a/" target="_blank" rel="noreferrer" class="rounded-full border border-slate-400/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-emerald-300 hover:text-emerald-200" aria-label="View LinkedIn profile">
+              View LinkedIn
+            </a>
+            <a href="#contact" class="rounded-full border border-slate-400/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-emerald-300 hover:text-emerald-200" aria-label="Go to contact section">
+              Contact Me
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" class="rounded-full border border-slate-400/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-emerald-300 hover:text-emerald-200" aria-label="Visit GitHub profile">
+              GitHub
+            </a>
+          </div>
+          <div class="mt-6 grid gap-2 text-sm text-slate-300 sm:grid-cols-2">
+            <p><strong class="text-slate-100">Email:</strong> fasafi@connect.ust.hk</p>
+            <p><strong class="text-slate-100">Phone:</strong> +852 9505 8342</p>
+            <p><strong class="text-slate-100">Location:</strong> Hong Kong SAR</p>
+            <p><strong class="text-slate-100">Open to:</strong> AI Engineering, ML Systems, Product Development</p>
+          </div>
+        </div>
+        <div class="mx-auto w-full max-w-sm">
+          <div class="overflow-hidden rounded-3xl border border-slate-500/30 bg-slate-900/50 p-2 shadow-glass">
+            <img
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80"
+              alt="Professional profile placeholder"
+              class="h-[360px] w-full rounded-2xl object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-block fade-in" aria-labelledby="about-title">
+      <div class="mb-8">
+        <h2 id="about-title" class="font-display text-3xl font-bold text-white lg:text-4xl">About Me</h2>
+        <p class="mt-2 max-w-3xl text-slate-300">
+          I am a Computer Engineering student at The Hong Kong University of Science and Technology focused on building AI systems that can be trusted in healthcare and education.
+          I enjoy owning end-to-end delivery, from model experimentation and data curation to front-end experience and real-world deployment.
+        </p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article class="glass-card rounded-2xl p-5">
+          <h3 class="font-display text-lg font-semibold text-emerald-200">Education Highlights</h3>
+          <p class="mt-3 text-sm text-slate-200">The Hong Kong University of Science and Technology, HKSAR</p>
+          <p class="text-sm text-slate-300">Aug 2023 - Aug 2027</p>
+          <p class="mt-2 text-sm text-slate-200">B.Eng. in Computer Engineering</p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            <li>HKSAR Government Scholar</li>
+            <li>HKUST University Scholar</li>
+            <li>Engineering Student Ambassador</li>
+            <li>Computer Engineering Mentor</li>
+          </ul>
+        </article>
+        <article class="glass-card rounded-2xl p-5 lg:col-span-2">
+          <h3 class="font-display text-lg font-semibold text-emerald-200">Professional Narrative</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-200">
+            In healthcare AI, reliability is as important as innovation. At the Hong Kong Hospital Authority, I worked on systems that process large confidential clinical documents,
+            support multilingual communication, and reduce hallucinations in medical LLM workflows. At TabNext and Igears, I translated product ideas into shipping software,
+            improving patient operations and customer-facing digital tools. This combination of AI engineering and product development is where I create my strongest impact.
+          </p>
+          <h4 class="mt-5 text-sm font-semibold uppercase tracking-wide text-emerald-200">Languages</h4>
+          <div class="mt-2 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-slate-800/80 px-3 py-1">Native: Bengali</span>
+            <span class="rounded-full bg-slate-800/80 px-3 py-1">Fluent: English, Urdu, Hindi</span>
+            <span class="rounded-full bg-slate-800/80 px-3 py-1">Conversational: French</span>
+            <span class="rounded-full bg-slate-800/80 px-3 py-1">Basic: Cantonese, Mandarin</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section-block fade-in" aria-labelledby="experience-title">
+      <div class="mb-8 flex items-end justify-between gap-4">
+        <div>
+          <h2 id="experience-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Experience</h2>
+          <p class="mt-2 text-slate-300">Click any role to see full responsibilities, technologies, and impact details.</p>
+        </div>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" id="experienceGrid"></div>
+    </section>
+
+    <section id="projects" class="section-block fade-in" aria-labelledby="projects-title">
+      <div class="mb-8">
+        <h2 id="projects-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Projects</h2>
+        <p class="mt-2 text-slate-300">Selected projects across healthcare AI, education technology, and full-stack product development.</p>
+      </div>
+      <div id="projectsGrid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <section id="skills" class="section-block fade-in" aria-labelledby="skills-title">
+      <div class="mb-8">
+        <h2 id="skills-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Skills</h2>
+      </div>
+      <div class="grid gap-5 lg:grid-cols-2">
+        <article class="glass-card rounded-2xl p-5">
+          <h3 class="font-display text-lg font-semibold text-emerald-200">Core Proficiency</h3>
+          <div class="mt-4 space-y-4">
+            <div>
+              <div class="mb-1 flex justify-between text-sm"><span>C++</span><span>Advanced</span></div>
+              <div class="h-2 rounded-full bg-slate-700"><div class="h-2 w-[90%] rounded-full bg-emerald-400"></div></div>
+            </div>
+            <div>
+              <div class="mb-1 flex justify-between text-sm"><span>Python + AI Libraries</span><span>Advanced</span></div>
+              <div class="h-2 rounded-full bg-slate-700"><div class="h-2 w-[88%] rounded-full bg-emerald-400"></div></div>
+            </div>
+            <div>
+              <div class="mb-1 flex justify-between text-sm"><span>Vue.js / Vuetify / HTML/CSS</span><span>Intermediate</span></div>
+              <div class="h-2 rounded-full bg-slate-700"><div class="h-2 w-[70%] rounded-full bg-cyan-400"></div></div>
+            </div>
+            <div>
+              <div class="mb-1 flex justify-between text-sm"><span>Docker / Linux</span><span>Intermediate</span></div>
+              <div class="h-2 rounded-full bg-slate-700"><div class="h-2 w-[68%] rounded-full bg-cyan-400"></div></div>
+            </div>
+          </div>
+        </article>
+        <article class="glass-card rounded-2xl p-5">
+          <h3 class="font-display text-lg font-semibold text-emerald-200">Tools and Domains</h3>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-100">
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">MedGemma Fine-Tuning</span>
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">Qwen VLM</span>
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">Whisper</span>
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">Azure Speech</span>
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">MuseTalk</span>
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">IBM Watsonx</span>
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">Gradio</span>
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">Git / GitHub</span>
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">Clinical AI UX</span>
+            <span class="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1">LLM Evaluation</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="blog" class="section-block fade-in" aria-labelledby="blog-title">
+      <div class="mb-8">
+        <h2 id="blog-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Insights & Writings</h2>
+        <p class="mt-2 text-slate-300">A snapshot of lessons from building AI systems in healthcare and education settings.</p>
+      </div>
+      <div id="blogGrid" class="grid gap-5 md:grid-cols-2"></div>
+    </section>
+
+    <section id="education" class="section-block fade-in" aria-labelledby="edu-title">
+      <div class="mb-8">
+        <h2 id="edu-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Education & Achievements</h2>
+      </div>
+      <div class="grid gap-5 lg:grid-cols-3">
+        <article class="glass-card rounded-2xl p-5 lg:col-span-2">
+          <h3 class="font-display text-lg font-semibold text-emerald-200">Timeline</h3>
+          <ol class="mt-4 space-y-4 border-l border-emerald-400/40 pl-4 text-sm text-slate-200">
+            <li>
+              <p class="font-semibold">Aug 2023 - Aug 2027</p>
+              <p>The Hong Kong University of Science and Technology, HKSAR - B.Eng. in Computer Engineering</p>
+            </li>
+            <li>
+              <p class="font-semibold">Jun 2024 - Aug 2024</p>
+              <p>Igears Technology Ltd., Kwai Fong, HK - Full Stack Programmer</p>
+            </li>
+            <li>
+              <p class="font-semibold">Jun 2025 - Aug 2025</p>
+              <p>TabNext IT Healthcare, Lai Chi Kok, HK - Front-End Programmer (Intern)</p>
+            </li>
+            <li>
+              <p class="font-semibold">Jul 2025 - Jun 2026</p>
+              <p>Hong Kong Hospital Authority, Kwun Tong, HK - Artificial Intelligence Engineer (Placement)</p>
+            </li>
+          </ol>
+        </article>
+        <article class="glass-card rounded-2xl p-5">
+          <h3 class="font-display text-lg font-semibold text-emerald-200">Competition Highlight</h3>
+          <p class="mt-3 text-sm font-semibold text-slate-100">IBM x Watson Hackathon</p>
+          <p class="text-sm text-emerald-200">Bronze Medal (Team) - SuperEd</p>
+          <p class="mt-2 text-sm text-slate-300">Oct 2025</p>
+          <p class="mt-3 text-sm text-slate-200">
+            Led development of an AI-powered personalized education platform and presented a strong product strategy focused on usability and cost-effectiveness for institutions.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section-block pb-16 fade-in" aria-labelledby="contact-title">
+      <div class="mb-8">
+        <h2 id="contact-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Contact</h2>
+        <p class="mt-2 text-slate-300">Open to collaboration, internships, and AI engineering opportunities.</p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        <article class="glass-card rounded-2xl p-5 text-sm">
+          <p><span class="font-semibold text-emerald-200">Email:</span> fasafi@connect.ust.hk</p>
+          <p class="mt-2"><span class="font-semibold text-emerald-200">Phone:</span> +852 9505 8342</p>
+          <p class="mt-2"><span class="font-semibold text-emerald-200">LinkedIn:</span> <a class="underline hover:text-emerald-200" href="https://www.linkedin.com/in/fardin-abrar-safi-5a9a3820a/" target="_blank" rel="noreferrer">linkedin.com/in/fardin-abrar-safi</a></p>
+          <p class="mt-2"><span class="font-semibold text-emerald-200">GitHub:</span> <a class="underline hover:text-emerald-200" href="https://github.com/yourusername" target="_blank" rel="noreferrer">github.com/yourusername</a></p>
+          <div class="mt-4 rounded-xl border border-slate-500/30 bg-slate-900/40 p-3 text-xs text-slate-300">
+            EmailJS note: replace service/template/public key placeholders in the script to enable real email delivery.
+          </div>
+        </article>
+        <form id="contactForm" class="glass-card rounded-2xl p-5" aria-label="Contact form">
+          <div class="space-y-4">
+            <div>
+              <label for="name" class="mb-1 block text-sm font-medium text-slate-200">Name</label>
+              <input id="name" name="name" type="text" required class="w-full rounded-lg border border-slate-500/50 bg-slate-900/50 px-3 py-2 text-sm text-white outline-none transition focus:border-emerald-300" />
+            </div>
+            <div>
+              <label for="email" class="mb-1 block text-sm font-medium text-slate-200">Email</label>
+              <input id="email" name="email" type="email" required class="w-full rounded-lg border border-slate-500/50 bg-slate-900/50 px-3 py-2 text-sm text-white outline-none transition focus:border-emerald-300" />
+            </div>
+            <div>
+              <label for="message" class="mb-1 block text-sm font-medium text-slate-200">Message</label>
+              <textarea id="message" name="message" rows="4" required class="w-full rounded-lg border border-slate-500/50 bg-slate-900/50 px-3 py-2 text-sm text-white outline-none transition focus:border-emerald-300"></textarea>
+            </div>
+            <button type="submit" class="rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-emerald-300">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-700/40 bg-slate-950/70 py-6 text-center text-sm text-slate-300">
+    <p>&copy; <span id="year"></span> Fardin Abrar Safi. All rights reserved.</p>
+    <p class="mt-1">Made with Tailwind + ❤️ in Hong Kong</p>
+  </footer>
+
+  <div id="modalRoot" class="pointer-events-none fixed inset-0 z-[80] hidden items-center justify-center bg-black/70 p-4" aria-hidden="true">
+    <div class="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-slate-600/60 bg-slate-950 p-6 shadow-2xl">
+      <div class="mb-4 flex items-start justify-between gap-4">
+        <div>
+          <h3 id="modalTitle" class="font-display text-xl font-bold text-white"></h3>
+          <p id="modalMeta" class="mt-1 text-sm text-emerald-200"></p>
+        </div>
+        <button id="closeModalBtn" class="rounded-full border border-slate-500/60 p-2 text-slate-200 transition hover:border-emerald-300 hover:text-emerald-200" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div id="modalBody" class="space-y-4 text-sm leading-relaxed text-slate-200"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="pointer-events-none fixed bottom-5 right-5 z-[90] hidden rounded-lg bg-emerald-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-xl" role="status" aria-live="polite">
+    Message sent successfully.
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    const experienceData = [
+      {
+        company: "Hong Kong Hospital Authority, Kwun Tong, HK",
+        role: "Artificial Intelligence Engineer (Placement)",
+        period: "Jul 2025 – Jun 2026",
+        summary: "Built secure, multilingual, clinically aligned AI products for doctor training and communication.",
+        bullets: [
+          "Built \"MCQ Generator\", a Gradio web app that processes large hospital guideline PDFs using Qwen VLM (via internal API) with chunked extraction; generates customizable MCQs, short-answer, and descriptive questions for doctor training.",
+          "Curated high-quality datasets from confidential A&E and anesthesia PDFs (text, tables, charts); collaborated on iterative fine-tuning of MedGemma to reduce hallucinations while preserving generalization and internal knowledge retrieval—led to approved secure chatbot prototype.",
+          "Developed multilingual (English, Mandarin, Cantonese) talking avatar interface for internal chatbot using Whisper + Azure Speech (Windows TTS for Cantonese) and MuseTalk for real-time GPU-accelerated lip sync, improving clinical user engagement.",
+          "Evaluated and selected open-source translation models for doctor–patient communication, including ethnic minority languages (Urdu, Bengali, Hindi), with focus on clinical terminology accuracy."
+        ],
+        tech: ["Gradio", "Qwen VLM", "MedGemma", "Whisper", "Azure Speech", "MuseTalk", "Python"]
+      },
+      {
+        company: "TabNext IT Healthcare, Lai Chi Kok, HK",
+        role: "Front-End Programmer (Intern)",
+        period: "Jun 2025 – Aug 2025",
+        summary: "Enhanced clinical and veterinary workflow UX in a Vue 2 + Vuetify codebase.",
+        bullets: [
+          "Enhanced Vue 2 + Vuetify codebase for clinical & veterinary management system prototype; implemented role-based access control for sensitive features (patient records, billing) and built custom calendar component for flexible appointment scheduling with precise time-slot blocking across non-standard grids (Google Calendar–inspired).",
+          "Developed real-time patient list filtering (by date, status, name, appointment type) using client-side search and Vue reactivity; integrated live blood pressure monitor data into intake forms (with hardware engineer) for automatic vital signs population during consultations.",
+          "Delivered UI enhancements, bug fixes, and iterative features in a 5-person remote team; supported live prototype demonstrations to prospective clinic and veterinary clients."
+        ],
+        tech: ["Vue 2", "Vuetify", "JavaScript", "Role-Based Access Control", "Client-Side Filtering"]
+      },
+      {
+        company: "Igears Technology Ltd., Kwai Fong, HK",
+        role: "Full Stack Programmer",
+        period: "Jun 2024 – Aug 2024",
+        summary: "Built customer-facing web tools for network testing and support automation.",
+        bullets: [
+          "Developed client-facing internet speed test web app integrating Ookla/Speedtest.net, Fast.com, and Measurement Lab APIs; created animated speedometer-style gauge using Vanilla JS, HTML5, CSS3, and Canvas.",
+          "Prototyped rule-based customer support chatbot with Botpress and Rasa, including conversation flows and human-in-the-loop ticket escalation."
+        ],
+        tech: ["Vanilla JS", "HTML5", "CSS3", "Canvas", "Botpress", "Rasa", "API Integration"]
+      }
+    ];
+
+    const projectsData = [
+      {
+        title: "MCQ Generator for Hospital Training",
+        description: "Clinical PDF ingestion pipeline with chunked extraction and LLM-driven generation of MCQ, short-answer, and descriptive questions.",
+        tech: ["Gradio", "Qwen VLM", "Python", "PDF Processing"],
+        github: "https://github.com/yourusername/mcq-generator",
+        demo: "#"
+      },
+      {
+        title: "Secure Medical Chatbot Prototype",
+        description: "Dataset curation and MedGemma fine-tuning workflow to improve factual reliability while preserving retrieval quality.",
+        tech: ["MedGemma", "LLM Fine-Tuning", "Evaluation", "Healthcare AI"],
+        github: "https://github.com/yourusername/secure-medical-chatbot",
+        demo: "#"
+      },
+      {
+        title: "SuperEd (IBM x Watson Hackathon)",
+        description: "Adaptive AI learning platform that personalizes study guidance using user error patterns, time signals, and deadlines.",
+        tech: ["IBM Watsonx", "Full-Stack", "Vercel", "Education AI"],
+        github: "https://github.com/yourusername/supered",
+        demo: "#"
+      },
+      {
+        title: "Multilingual Talking Avatar",
+        description: "Clinical chatbot interface with English, Mandarin, and Cantonese speech plus real-time GPU lip sync.",
+        tech: ["Whisper", "Azure Speech", "MuseTalk", "GPU Inference"],
+        github: "https://github.com/yourusername/talking-avatar",
+        demo: "#"
+      },
+      {
+        title: "Internet Speed Test Web App",
+        description: "Unified speed-test dashboard with animated gauge integrating major testing APIs for customer diagnostics.",
+        tech: ["Vanilla JS", "Canvas", "Ookla API", "Measurement Lab"],
+        github: "https://github.com/yourusername/speed-test-app",
+        demo: "#"
+      }
+    ];
+
+    const blogData = [
+      {
+        title: "Building an AI-Powered MCQ Generator for Hospital Training - Lessons from Fine-Tuning MedGemma",
+        date: "November 2025",
+        excerpt: "What changed when we moved from generic Q&A generation to clinically structured question pipelines.",
+        content: [
+          "At the Hospital Authority, one of our biggest training bottlenecks was content conversion: valuable guideline PDFs existed, but translating them into reusable learning material was mostly manual. I designed a workflow that combines chunked PDF extraction and vision-language parsing to generate exam-style questions that doctors could immediately use.",
+          "The key shift was to treat question generation as a reliability problem, not a creativity problem. We built strict content segmentation rules, separated source extraction from generation, and introduced human review gates for higher-risk domains. This made generated questions more traceable to source passages and reduced ambiguous outputs.",
+          "Fine-tuning MedGemma was useful, but only after improving data quality. We curated difficult edge cases from anesthesia and A&E guidelines, including tables and mixed-format content. Iterative tuning plus prompt constraints gave us better factual grounding while preserving useful generalization.",
+          "A simple evaluation script helped us compare runs and track quality regressions quickly:",
+          "<pre class='overflow-x-auto rounded-lg bg-slate-900 p-3 text-xs text-emerald-200'><code>for q in generated_questions:\n    score = clinical_reviewer.score(q)\n    if score &lt; 0.8:\n        flagged.append(q)\nprint(f\"Flagged: {len(flagged)} / {len(generated_questions)}\")</code></pre>",
+          "The lesson: in medical AI, architecture discipline matters more than model novelty. Teams that invest in data curation, traceability, and reviewer feedback loops can move from interesting demos to systems that clinicians actually trust."
+        ]
+      },
+      {
+        title: "Multilingual Talking Avatars: How I Added Cantonese Lip-Sync to a Clinical Chatbot",
+        date: "October 2025",
+        excerpt: "Designing a multilingual voice interface for clinical workflows meant optimizing latency, clarity, and trust.",
+        content: [
+          "Clinical chatbot adoption often fails at the interface layer. Even with strong model outputs, users disengage if audio sounds unnatural or if language switching is inconsistent. I built a multilingual talking avatar stack with Whisper for ASR, Azure Speech for synthesis, and MuseTalk for lip synchronization.",
+          "Cantonese was the toughest lane. We used Windows TTS as a practical fallback because it handled local pronunciation more consistently in our environment. The challenge was synchronization drift: phoneme timing and generated lip movement could diverge after longer responses.",
+          "To stabilize perceived quality, I introduced short segment synthesis and forced alignment windows. This reduced long-sequence drift and gave users a smoother conversational rhythm. We also added language-aware prompt routing so the system could preserve terminology while adapting tone.",
+          "A lightweight orchestration pattern looked like this:",
+          "<pre class='overflow-x-auto rounded-lg bg-slate-900 p-3 text-xs text-emerald-200'><code>audio = tts_engine.speak(text, lang=detected_lang)\nvisemes = align(audio, text)\nframes = musetalk.render(avatar_id, visemes)\nstream(frames, audio)</code></pre>",
+          "The result was not just a better demo. It improved clinical user engagement by making interactions feel more human and less transactional. In healthcare contexts, that interaction quality can be the difference between occasional usage and daily adoption."
+        ]
+      },
+      {
+        title: "From Hackathon to Product: Scaling SuperEd with IBM Watsonx",
+        date: "October 2025",
+        excerpt: "SuperEd started as a hackathon prototype, but our team treated it like a product from day one.",
+        content: [
+          "During the IBM x Watson Hackathon, we built SuperEd to prove that adaptive study systems can be both effective and practical. Instead of generic chatbot tutoring, we focused on personalized guidance using three inputs: mistake patterns, time spent, and upcoming deadlines.",
+          "As team lead, I pushed for a product-first architecture. We separated user analytics collection, recommendation logic, and tutor conversation generation. That made it easier to tune each part independently and explain the system clearly to judges.",
+          "Watsonx LLMs gave us strong conversational flexibility, but the real advantage came from context packaging. The tutor saw not only a user question, but a compact performance state, recent struggles, and upcoming priorities. This improved relevance and made feedback feel intentional.",
+          "Our core recommendation strategy was simple and inspectable:",
+          "<pre class='overflow-x-auto rounded-lg bg-slate-900 p-3 text-xs text-emerald-200'><code>priority = 0.5 * error_rate + 0.3 * deadline_urgency + 0.2 * time_gap\nnext_topic = max(topics, key=lambda t: priority_map[t])</code></pre>",
+          "We deployed on Vercel for live judging and presented SuperEd as a scalable, cost-conscious alternative to conventional LMS experiences. Winning bronze validated our technical direction, but more importantly, it validated the product story."
+        ]
+      },
+      {
+        title: "Reducing Hallucinations in Medical LLMs - My Experience at Hospital Authority",
+        date: "December 2025",
+        excerpt: "Hallucination reduction required discipline across data, prompts, and evaluation, not one silver-bullet model tweak.",
+        content: [
+          "In medical environments, hallucinations are not minor errors; they are trust failures. At Hospital Authority, we approached hallucination reduction as a systems problem across curation, tuning, and retrieval behavior.",
+          "First, we curated higher-quality training and validation slices from confidential guideline material, including difficult mixed-format cases. Second, we tightened prompt policies to enforce source-grounded response structure. Third, we evaluated outputs with clinical reviewers, focusing on factuality and terminology integrity rather than generic fluency metrics.",
+          "One practical improvement was adding uncertainty signaling. If evidence coverage was weak, the assistant had to acknowledge limits and suggest escalation rather than force a confident answer. This preserved safety while maintaining user trust.",
+          "We tracked factual quality through a compact evaluator pipeline:",
+          "<pre class='overflow-x-auto rounded-lg bg-slate-900 p-3 text-xs text-emerald-200'><code>if evidence_score &lt; threshold:\n    response = safe_fallback(query)\nelse:\n    response = grounded_generation(query, evidence)</code></pre>",
+          "The biggest takeaway is that reliable medical AI is operational, not just algorithmic. Better outcomes came from combining model improvements with governance: reviewer loops, explicit fallback behavior, and measurable quality gates before release."
+        ]
+      }
+    ];
+
+    const experienceGrid = document.getElementById("experienceGrid");
+    const projectsGrid = document.getElementById("projectsGrid");
+    const blogGrid = document.getElementById("blogGrid");
+
+    experienceData.forEach((exp, index) => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "glass-card group rounded-2xl p-5 text-left transition hover:-translate-y-1 hover:border-emerald-300/50";
+      card.setAttribute("aria-label", `Open details for ${exp.role} at ${exp.company}`);
+      card.innerHTML = `
+        <p class="text-xs uppercase tracking-wider text-emerald-200">${exp.period}</p>
+        <h3 class="mt-2 font-display text-lg font-semibold text-white">${exp.role}</h3>
+        <p class="mt-1 text-sm text-slate-300">${exp.company}</p>
+        <p class="mt-3 text-sm text-slate-200">${exp.summary}</p>
+        <span class="mt-4 inline-block text-xs font-semibold text-emerald-200">Learn More -></span>
+      `;
+      card.addEventListener("click", () => openModal({
+        title: exp.role,
+        meta: `${exp.company} | ${exp.period}`,
+        body: `
+          <p>${exp.summary}</p>
+          <h4 class="mt-3 font-semibold text-emerald-200">Key Contributions</h4>
+          <ul class="list-disc space-y-2 pl-5">${exp.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>
+          <h4 class="mt-3 font-semibold text-emerald-200">Technologies</h4>
+          <p>${exp.tech.join(" | ")}</p>
+        `
+      }));
+      experienceGrid.appendChild(card);
+    });
+
+    projectsData.forEach((project) => {
+      const card = document.createElement("article");
+      card.className = "glass-card rounded-2xl p-5 transition hover:-translate-y-1 hover:border-emerald-300/50";
+      card.innerHTML = `
+        <h3 class="font-display text-lg font-semibold text-white">${project.title}</h3>
+        <p class="mt-2 text-sm text-slate-300">${project.description}</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-100">
+          ${project.tech.map((tag) => `<span class='rounded-full bg-slate-800/90 px-2.5 py-1'>${tag}</span>`).join("")}
+        </div>
+        <div class="mt-4 flex gap-4 text-sm">
+          <a href="${project.github}" target="_blank" rel="noreferrer" class="font-semibold text-emerald-200 hover:text-emerald-100">GitHub</a>
+          <a href="${project.demo}" class="font-semibold text-emerald-200 hover:text-emerald-100">Demo</a>
+        </div>
+      `;
+      projectsGrid.appendChild(card);
+    });
+
+    blogData.forEach((post) => {
+      const card = document.createElement("article");
+      card.className = "glass-card rounded-2xl p-5 transition hover:-translate-y-1 hover:border-emerald-300/50";
+      card.innerHTML = `
+        <p class="text-xs uppercase tracking-wide text-emerald-200">${post.date}</p>
+        <h3 class="mt-2 font-display text-lg font-semibold text-white">${post.title}</h3>
+        <p class="mt-2 text-sm text-slate-300">${post.excerpt}</p>
+        <button type="button" class="read-post mt-4 rounded-full border border-emerald-300/50 px-3 py-1.5 text-xs font-semibold text-emerald-200 hover:bg-emerald-300/10" aria-label="Read full post ${post.title}">
+          Read Full Post
+        </button>
+      `;
+      card.querySelector(".read-post").addEventListener("click", () => openModal({
+        title: post.title,
+        meta: post.date,
+        body: post.content.map((p) => `<p>${p}</p>`).join("")
+      }));
+      blogGrid.appendChild(card);
+    });
+
+    const modalRoot = document.getElementById("modalRoot");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalMeta = document.getElementById("modalMeta");
+    const modalBody = document.getElementById("modalBody");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+
+    function openModal({ title, meta, body }) {
+      modalTitle.textContent = title;
+      modalMeta.textContent = meta;
+      modalBody.innerHTML = body;
+      modalRoot.classList.remove("hidden");
+      modalRoot.classList.add("flex");
+      modalRoot.classList.remove("pointer-events-none");
+      modalRoot.setAttribute("aria-hidden", "false");
+      closeModalBtn.focus();
+    }
+
+    function closeModal() {
+      modalRoot.classList.add("hidden", "pointer-events-none");
+      modalRoot.classList.remove("flex");
+      modalRoot.setAttribute("aria-hidden", "true");
+    }
+
+    closeModalBtn.addEventListener("click", closeModal);
+    modalRoot.addEventListener("click", (e) => {
+      if (e.target === modalRoot) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modalRoot.classList.contains("hidden")) closeModal();
+    });
+
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+    const navLinks = document.querySelectorAll("header nav a[href^='#']");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      const expanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
+      mobileMenuBtn.setAttribute("aria-expanded", String(!expanded));
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (mobileMenu.classList.contains("hidden")) return;
+      const target = event.target;
+      if (target instanceof Node && !mobileMenu.contains(target) && !mobileMenuBtn.contains(target)) {
+        mobileMenu.classList.add("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        mobileMenu.classList.add("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    function applyTheme(isLight) {
+      const body = document.body;
+      if (isLight) {
+        document.documentElement.classList.remove("dark");
+        body.classList.add("light", "light-bg");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.classList.add("dark");
+        body.classList.remove("light", "light-bg");
+        localStorage.setItem("theme", "dark");
+      }
+    }
+
+    const themeToggle = document.getElementById("themeToggle");
+    const themeToggleMobile = document.getElementById("themeToggleMobile");
+
+    [themeToggle, themeToggleMobile].forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isLight = !document.body.classList.contains("light");
+        applyTheme(isLight);
+      });
+    });
+
+    if (localStorage.getItem("theme") === "light") {
+      applyTheme(true);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".fade-in").forEach((el, idx) => {
+      el.style.transitionDelay = `${Math.min(idx * 40, 240)}ms`;
+      observer.observe(el);
+    });
+
+    const sectionIds = ["home", "about", "experience", "projects", "blog", "skills", "contact"];
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        navLinks.forEach((link) => {
+          const isMatch = link.getAttribute("href") === `#${id}`;
+          link.classList.toggle("active", isMatch);
+          if (isMatch) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      });
+    }, { threshold: 0.5, rootMargin: "-20% 0px -35% 0px" });
+
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) navObserver.observe(section);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const contactForm = document.getElementById("contactForm");
+    const toast = document.getElementById("toast");
+
+    // Replace placeholders with your EmailJS values.
+    const EMAILJS_PUBLIC_KEY = "YOUR_EMAILJS_PUBLIC_KEY";
+    const EMAILJS_SERVICE_ID = "YOUR_EMAILJS_SERVICE_ID";
+    const EMAILJS_TEMPLATE_ID = "YOUR_EMAILJS_TEMPLATE_ID";
+
+    if (window.emailjs && EMAILJS_PUBLIC_KEY !== "YOUR_EMAILJS_PUBLIC_KEY") {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
+    function showToast(text) {
+      toast.textContent = text;
+      toast.classList.remove("hidden");
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 2600);
+    }
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const formData = {
+        from_name: contactForm.name.value.trim(),
+        from_email: contactForm.email.value.trim(),
+        message: contactForm.message.value.trim()
+      };
+
+      if (!formData.from_name || !formData.from_email || !formData.message) {
+        showToast("Please fill in all fields.");
+        return;
+      }
+
+      const canSendWithEmailJS = (
+        window.emailjs &&
+        EMAILJS_PUBLIC_KEY !== "YOUR_EMAILJS_PUBLIC_KEY" &&
+        EMAILJS_SERVICE_ID !== "YOUR_EMAILJS_SERVICE_ID" &&
+        EMAILJS_TEMPLATE_ID !== "YOUR_EMAILJS_TEMPLATE_ID"
+      );
+
+      try {
+        if (canSendWithEmailJS) {
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData);
+          showToast("Message sent successfully.");
+        } else {
+          showToast("Demo mode: message captured. Configure EmailJS keys to send real emails.");
+        }
+        contactForm.reset();
+      } catch (err) {
+        console.error(err);
+        showToast("Unable to send right now. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
