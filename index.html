@@ -212,7 +212,6 @@
         <a href="#projects" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Projects</a>
         <a href="#blog" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Blog</a>
         <a href="#skills" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Skills</a>
-        <a href="#contact" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Contact</a>
         <button id="themeToggle" class="rounded-full border border-emerald-400/50 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-emerald-200 transition hover:bg-emerald-400/20" aria-label="Toggle dark and light mode">
           Toggle Theme
         </button>
@@ -229,7 +228,6 @@
         <a href="#projects" class="mobile-link text-slate-100">Projects</a>
         <a href="#blog" class="mobile-link text-slate-100">Blog</a>
         <a href="#skills" class="mobile-link text-slate-100">Skills</a>
-        <a href="#contact" class="mobile-link text-slate-100">Contact</a>
         <button id="themeToggleMobile" class="rounded-md border border-emerald-400/40 px-3 py-2 text-left text-emerald-200">Toggle Theme</button>
         <a href="resume.pdf" class="rounded-md bg-emerald-400 px-3 py-2 font-semibold text-slate-950">Download Resume</a>
       </div>
@@ -262,9 +260,6 @@
             </a>
             <a href="https://www.linkedin.com/in/fardin-abrar-safi-5a9a3820a/" target="_blank" rel="noreferrer" class="rounded-full border border-slate-400/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-emerald-300 hover:text-emerald-200" aria-label="View LinkedIn profile">
               View LinkedIn
-            </a>
-            <a href="#contact" class="rounded-full border border-slate-400/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-emerald-300 hover:text-emerald-200" aria-label="Go to contact section">
-              Contact Me
             </a>
             <a href="https://github.com/FardinSafi" target="_blank" rel="noreferrer" class="rounded-full border border-slate-400/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-emerald-300 hover:text-emerald-200" aria-label="Visit GitHub profile">
               GitHub
@@ -437,40 +432,7 @@
       </div>
     </section>
 
-    <section id="contact" class="section-block pb-16 fade-in" aria-labelledby="contact-title">
-      <div class="mb-8">
-        <h2 id="contact-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Contact</h2>
-        <p class="mt-2 text-slate-300">Open to collaboration, internships, and AI engineering opportunities.</p>
-      </div>
-      <div class="grid gap-6 lg:grid-cols-2">
-        <article class="glass-card rounded-2xl p-5 text-sm">
-          <p><span class="font-semibold text-emerald-200">Email:</span> fasafi@connect.ust.hk</p>
-          <p class="mt-2"><span class="font-semibold text-emerald-200">Phone:</span> +852 9505 8342</p>
-          <p class="mt-2"><span class="font-semibold text-emerald-200">LinkedIn:</span> <a class="underline hover:text-emerald-200" href="https://www.linkedin.com/in/fardin-abrar-safi-5a9a3820a/" target="_blank" rel="noreferrer">linkedin.com/in/fardin-abrar-safi</a></p>
-          <p class="mt-2"><span class="font-semibold text-emerald-200">GitHub:</span> <a class="underline hover:text-emerald-200" href="https://github.com/FardinSafi" target="_blank" rel="noreferrer">github.com/FardinSafi</a></p>
-          <div class="mt-4 rounded-xl border border-slate-500/30 bg-slate-900/40 p-3 text-xs text-slate-300">
-            EmailJS note: replace service/template/public key placeholders in the script to enable real email delivery.
-          </div>
-        </article>
-        <form id="contactForm" class="glass-card rounded-2xl p-5" aria-label="Contact form">
-          <div class="space-y-4">
-            <div>
-              <label for="name" class="mb-1 block text-sm font-medium text-slate-200">Name</label>
-              <input id="name" name="name" type="text" required class="w-full rounded-lg border border-slate-500/50 bg-slate-900/50 px-3 py-2 text-sm text-white outline-none transition focus:border-emerald-300" />
-            </div>
-            <div>
-              <label for="email" class="mb-1 block text-sm font-medium text-slate-200">Email</label>
-              <input id="email" name="email" type="email" required class="w-full rounded-lg border border-slate-500/50 bg-slate-900/50 px-3 py-2 text-sm text-white outline-none transition focus:border-emerald-300" />
-            </div>
-            <div>
-              <label for="message" class="mb-1 block text-sm font-medium text-slate-200">Message</label>
-              <textarea id="message" name="message" rows="4" required class="w-full rounded-lg border border-slate-500/50 bg-slate-900/50 px-3 py-2 text-sm text-white outline-none transition focus:border-emerald-300"></textarea>
-            </div>
-            <button type="submit" class="rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-emerald-300">Send Message</button>
-          </div>
-        </form>
-      </div>
-    </section>
+
   </main>
 
   <footer class="border-t border-slate-700/40 bg-slate-950/70 py-6 text-center text-sm text-slate-300">
@@ -495,11 +457,9 @@
     </div>
   </div>
 
-  <div id="toast" class="pointer-events-none fixed bottom-5 right-5 z-[90] hidden rounded-lg bg-emerald-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-xl" role="status" aria-live="polite">
-    Message sent successfully.
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <script>
     const experienceData = [
       {
@@ -672,10 +632,7 @@
         <div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-100">
           ${project.tech.map((tag) => `<span class='rounded-full bg-slate-800/90 px-2.5 py-1'>${tag}</span>`).join("")}
         </div>
-        <div class="mt-4 flex gap-4 text-sm">
-          <a href="${project.github}" target="_blank" rel="noreferrer" class="font-semibold text-emerald-200 hover:text-emerald-100">GitHub</a>
-          <a href="${project.demo}" class="font-semibold text-emerald-200 hover:text-emerald-100">Demo</a>
-        </div>
+
       `;
       projectsGrid.appendChild(card);
     });
@@ -804,7 +761,7 @@
       observer.observe(el);
     });
 
-    const sectionIds = ["home", "about", "experience", "projects", "blog", "skills", "contact"];
+    const sectionIds = ["home", "about", "experience", "projects", "blog", "skills"];
     const navObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -827,60 +784,6 @@
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    const contactForm = document.getElementById("contactForm");
-    const toast = document.getElementById("toast");
-
-    // Replace placeholders with your EmailJS values.
-    const EMAILJS_PUBLIC_KEY = "YOUR_EMAILJS_PUBLIC_KEY";
-    const EMAILJS_SERVICE_ID = "YOUR_EMAILJS_SERVICE_ID";
-    const EMAILJS_TEMPLATE_ID = "YOUR_EMAILJS_TEMPLATE_ID";
-
-    if (window.emailjs && EMAILJS_PUBLIC_KEY !== "YOUR_EMAILJS_PUBLIC_KEY") {
-      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-    }
-
-    function showToast(text) {
-      toast.textContent = text;
-      toast.classList.remove("hidden");
-      setTimeout(() => {
-        toast.classList.add("hidden");
-      }, 2600);
-    }
-
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const formData = {
-        from_name: contactForm.name.value.trim(),
-        from_email: contactForm.email.value.trim(),
-        message: contactForm.message.value.trim()
-      };
-
-      if (!formData.from_name || !formData.from_email || !formData.message) {
-        showToast("Please fill in all fields.");
-        return;
-      }
-
-      const canSendWithEmailJS = (
-        window.emailjs &&
-        EMAILJS_PUBLIC_KEY !== "YOUR_EMAILJS_PUBLIC_KEY" &&
-        EMAILJS_SERVICE_ID !== "YOUR_EMAILJS_SERVICE_ID" &&
-        EMAILJS_TEMPLATE_ID !== "YOUR_EMAILJS_TEMPLATE_ID"
-      );
-
-      try {
-        if (canSendWithEmailJS) {
-          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData);
-          showToast("Message sent successfully.");
-        } else {
-          showToast("Demo mode: message captured. Configure EmailJS keys to send real emails.");
-        }
-        contactForm.reset();
-      } catch (err) {
-        console.error(err);
-        showToast("Unable to send right now. Please try again.");
-      }
-    });
   </script>
 </body>
 </html>
