@@ -20,11 +20,7 @@
   <link rel="canonical" href="https://fardinsafi.github.io/personal-portfolio/" />
 
   <script>
-    if (localStorage.getItem("theme") === "light") {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
+    document.documentElement.classList.add("dark");
 
     window.tailwind = window.tailwind || {};
     window.tailwind.config = {
@@ -67,57 +63,11 @@
         linear-gradient(180deg, #071425 0%, #081a2f 45%, #06111f 100%);
     }
 
-    .light-bg {
-      background:
-        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.1), transparent 40%),
-        radial-gradient(circle at 85% 0%, rgba(8, 145, 178, 0.1), transparent 35%),
-        linear-gradient(180deg, #f3f8ff 0%, #eef8f4 100%);
-    }
-
     .glass-card {
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       background: rgba(10, 37, 64, 0.55);
       border: 1px solid rgba(148, 163, 184, 0.2);
-    }
-
-    body.light {
-      color: #0f172a;
-    }
-
-    body.light header {
-      background: rgba(255, 255, 255, 0.9) !important;
-      border-color: rgba(148, 163, 184, 0.45) !important;
-    }
-
-    body.light header a,
-    body.light header button,
-    body.light header .text-slate-200,
-    body.light header .text-slate-100 {
-      color: #0f172a !important;
-    }
-
-    body.light .glass-card {
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-    }
-
-    body.light .glass-card * {
-      color: #0f172a;
-    }
-
-    body.light .text-white,
-    body.light .text-slate-100,
-    body.light .text-slate-200,
-    body.light .text-slate-300 {
-      color: #0f172a !important;
-    }
-
-    body.light .bg-slate-900\/50,
-    body.light .bg-slate-900\/40,
-    body.light .bg-slate-800\/80,
-    body.light .bg-slate-800\/90 {
-      background-color: rgba(226, 232, 240, 0.7) !important;
     }
 
     .fade-in {
@@ -211,9 +161,6 @@
         <a href="#experience" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Experience</a>
         <a href="#projects" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Projects</a>
         <a href="#skills" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Skills</a>
-        <button id="themeToggle" class="rounded-full border border-emerald-400/50 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-emerald-200 transition hover:bg-emerald-400/20" aria-label="Toggle dark and light mode">
-          Toggle Theme
-        </button>
         <a href="resume.pdf" class="rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:scale-[1.02] hover:bg-emerald-300" aria-label="Download resume PDF">
           Download Resume
         </a>
@@ -226,7 +173,6 @@
         <a href="#experience" class="mobile-link text-slate-100">Experience</a>
         <a href="#projects" class="mobile-link text-slate-100">Projects</a>
         <a href="#skills" class="mobile-link text-slate-100">Skills</a>
-        <button id="themeToggleMobile" class="rounded-md border border-emerald-400/40 px-3 py-2 text-left text-emerald-200">Toggle Theme</button>
         <a href="resume.pdf" class="rounded-md bg-emerald-400 px-3 py-2 font-semibold text-slate-950">Download Resume</a>
       </div>
     </div>
@@ -635,33 +581,6 @@
         mobileMenuBtn.setAttribute("aria-expanded", "false");
       });
     });
-
-    function applyTheme(isLight) {
-      const body = document.body;
-      if (isLight) {
-        document.documentElement.classList.remove("dark");
-        body.classList.add("light", "light-bg");
-        localStorage.setItem("theme", "light");
-      } else {
-        document.documentElement.classList.add("dark");
-        body.classList.remove("light", "light-bg");
-        localStorage.setItem("theme", "dark");
-      }
-    }
-
-    const themeToggle = document.getElementById("themeToggle");
-    const themeToggleMobile = document.getElementById("themeToggleMobile");
-
-    [themeToggle, themeToggleMobile].forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const isLight = !document.body.classList.contains("light");
-        applyTheme(isLight);
-      });
-    });
-
-    if (localStorage.getItem("theme") === "light") {
-      applyTheme(true);
-    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
