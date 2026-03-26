@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="dark scroll-smooth">
 <head>
+  <!-- ======== CORE META / SEO / SOCIAL PREVIEW ======== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fardin Abrar Safi | AI Engineer & Computer Engineering Student</title>
@@ -19,6 +20,7 @@
   <meta name="twitter:image" content="https://raw.githubusercontent.com/FardinSafi/personal-portfolio/main/headshot.jpg" />
   <link rel="canonical" href="https://fardinsafi.github.io/personal-portfolio/" />
 
+  <!-- ======== TAILWIND THEME CONFIGURATION ======== -->
   <script>
     document.documentElement.classList.add("dark");
 
@@ -50,11 +52,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
+  <!-- ======== GLOBAL STYLES ======== -->
   <style>
+    /* Base page color mode support */
     :root {
       color-scheme: dark light;
     }
 
+    /* Global body typography + atmospheric background */
     body {
       font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
       background:
@@ -63,6 +68,7 @@
         linear-gradient(180deg, #071425 0%, #081a2f 45%, #06111f 100%);
     }
 
+    /* Reusable frosted-glass card style used across sections */
     .glass-card {
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -70,45 +76,54 @@
       border: 1px solid rgba(148, 163, 184, 0.2);
     }
 
+    /* Shared reveal animation for section entrance */
     .fade-in {
       opacity: 0;
       transform: translateY(20px) scale(0.995);
       transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
+    /* Applied when IntersectionObserver marks an element visible */
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0) scale(1);
     }
 
+    /* Top spacing helper for sections under fixed navbar */
     .section-block {
       padding-top: 5rem;
     }
 
+    /* Increased section spacing on desktop */
     @media (min-width: 1024px) {
       .section-block {
         padding-top: 6.5rem;
       }
     }
 
+    /* Keeps anchor jumps from hiding content under sticky header */
     section[id] {
       scroll-margin-top: 6.5rem;
     }
 
+    /* Active nav highlight state */
     .nav-link.active {
       color: #6ee7b7 !important;
     }
 
+    /* Mobile menu link styling */
     .mobile-link {
       border-radius: 0.5rem;
       padding: 0.4rem 0.6rem;
       transition: background-color 0.2s ease;
     }
 
+    /* Mobile menu hover state */
     .mobile-link:hover {
       background-color: rgba(16, 185, 129, 0.14);
     }
 
+    /* Accessibility: disable motion when user requests reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .fade-in {
         opacity: 1;
@@ -118,6 +133,7 @@
     }
   </style>
 
+  <!-- ======== STRUCTURED DATA (SCHEMA.ORG PERSON) ======== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -141,11 +157,14 @@
   </script>
 </head>
 <body class="text-slate-100 antialiased dark:bg-transparent light:bg-transparent">
+  <!-- ======== SKIP LINK (ACCESSIBILITY) ======== -->
   <a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-emerald-400 focus:px-3 focus:py-2 focus:text-slate-900">
     Skip to content
   </a>
 
+  <!-- ======== HEADER / NAVBAR ======== -->
   <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-700/40 bg-slate-950/65 backdrop-blur-md dark:bg-slate-950/65">
+    <!-- Desktop and mobile navigation shell -->
     <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
       <a href="#home" class="font-display text-lg font-bold tracking-wide text-emerald-300" aria-label="Go to Home section">
         Fardin Abrar Safi
@@ -155,6 +174,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </button>
+      <!-- Desktop navigation links -->
       <div class="hidden items-center gap-4 md:flex">
         <a href="#home" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Home</a>
         <a href="#about" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">About</a>
@@ -166,6 +186,7 @@
         </a>
       </div>
     </nav>
+    <!-- Mobile navigation drawer -->
     <div id="mobileMenu" class="hidden border-t border-slate-700/50 bg-slate-950/90 px-4 py-4 md:hidden">
       <div class="flex flex-col gap-3">
         <a href="#home" class="mobile-link text-slate-100">Home</a>
@@ -178,7 +199,9 @@
     </div>
   </header>
 
+  <!-- ======== MAIN CONTENT WRAPPER ======== -->
   <main id="home" class="mx-auto w-full max-w-6xl px-4 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+    <!-- ======== HERO SECTION ======== -->
     <section class="relative overflow-hidden rounded-3xl border border-slate-700/50 px-6 py-12 shadow-glass fade-in sm:px-10 lg:px-12 lg:py-16" aria-label="Hero section">
       <div class="pointer-events-none absolute -right-14 top-8 h-56 w-56 rounded-full bg-emerald-400/20 blur-3xl"></div>
       <div class="pointer-events-none absolute -bottom-16 -left-12 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl"></div>
@@ -229,6 +252,7 @@
       </div>
     </section>
 
+    <!-- ======== ABOUT SECTION ======== -->
     <section id="about" class="section-block fade-in" aria-labelledby="about-title">
       <div class="mb-8">
         <h2 id="about-title" class="font-display text-3xl font-bold text-white lg:text-4xl">About Me</h2>
@@ -268,6 +292,7 @@
       </div>
     </section>
 
+    <!-- ======== EXPERIENCE SECTION (JS-CREATED CARDS + MODAL DETAILS) ======== -->
     <section id="experience" class="section-block fade-in" aria-labelledby="experience-title">
       <div class="mb-8 flex items-end justify-between gap-4">
         <div>
@@ -278,6 +303,7 @@
       <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" id="experienceGrid"></div>
     </section>
 
+    <!-- ======== PROJECTS SECTION (JS-CREATED CARDS) ======== -->
     <section id="projects" class="section-block fade-in" aria-labelledby="projects-title">
       <div class="mb-8">
         <h2 id="projects-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Projects</h2>
@@ -286,6 +312,7 @@
       <div id="projectsGrid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
     </section>
 
+    <!-- ======== SKILLS SECTION ======== -->
     <section id="skills" class="section-block fade-in" aria-labelledby="skills-title">
       <div class="mb-8">
         <h2 id="skills-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Skills</h2>
@@ -330,6 +357,7 @@
       </div>
     </section>
 
+    <!-- ======== EDUCATION & ACHIEVEMENTS SECTION ======== -->
     <section id="education" class="section-block fade-in" aria-labelledby="edu-title">
       <div class="mb-8">
         <h2 id="edu-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Education & Achievements</h2>
@@ -371,11 +399,13 @@
 
   </main>
 
+  <!-- ======== FOOTER ======== -->
   <footer class="border-t border-slate-700/40 bg-slate-950/70 py-6 text-center text-sm text-slate-300">
     <p>&copy; <span id="year"></span> Fardin Abrar Safi. All rights reserved.</p>
     <p class="mt-1">Made with Tailwind + ❤️ in Hong Kong</p>
   </footer>
 
+  <!-- ======== REUSABLE MODAL (USED BY EXPERIENCE CARDS) ======== -->
   <div id="modalRoot" class="pointer-events-none fixed inset-0 z-[80] hidden items-center justify-center bg-black/70 p-4" aria-hidden="true">
     <div class="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-slate-600/60 bg-slate-950 p-6 shadow-2xl">
       <div class="mb-4 flex items-start justify-between gap-4">
@@ -396,7 +426,9 @@
   </div>
 
 
+  <!-- ======== CLIENT-SIDE DATA + INTERACTIONS ======== -->
   <script>
+    // Experience card data source. Edit here to change roles and modal content.
     const experienceData = [
       {
         company: "Hong Kong Hospital Authority, Kwun Tong, HK",
@@ -436,6 +468,7 @@
       }
     ];
 
+    // Project card data source. Edit here to add/remove projects and tags.
     const projectsData = [
       {
         title: "MCQ Generator for Hospital Training",
@@ -474,9 +507,11 @@
       }
     ];
 
+    // Grid mount points where JS injects cards.
     const experienceGrid = document.getElementById("experienceGrid");
     const projectsGrid = document.getElementById("projectsGrid");
 
+    // Build Experience cards and bind each card to modal details.
     experienceData.forEach((exp, index) => {
       const card = document.createElement("button");
       card.type = "button";
@@ -503,6 +538,7 @@
       experienceGrid.appendChild(card);
     });
 
+    // Build Project cards.
     projectsData.forEach((project) => {
       const card = document.createElement("article");
       card.className = "glass-card rounded-2xl p-5 transition hover:-translate-y-1 hover:border-emerald-300/50";
@@ -517,12 +553,14 @@
       projectsGrid.appendChild(card);
     });
 
+    // Modal element references.
     const modalRoot = document.getElementById("modalRoot");
     const modalTitle = document.getElementById("modalTitle");
     const modalMeta = document.getElementById("modalMeta");
     const modalBody = document.getElementById("modalBody");
     const closeModalBtn = document.getElementById("closeModalBtn");
 
+    // Opens the shared modal and injects title/meta/body content.
     function openModal({ title, meta, body }) {
       modalTitle.textContent = title;
       modalMeta.textContent = meta;
@@ -534,12 +572,14 @@
       closeModalBtn.focus();
     }
 
+    // Closes the shared modal and restores hidden state.
     function closeModal() {
       modalRoot.classList.add("hidden", "pointer-events-none");
       modalRoot.classList.remove("flex");
       modalRoot.setAttribute("aria-hidden", "true");
     }
 
+    // Modal close interactions: button, backdrop click, Escape key.
     closeModalBtn.addEventListener("click", closeModal);
     modalRoot.addEventListener("click", (e) => {
       if (e.target === modalRoot) closeModal();
@@ -548,17 +588,20 @@
       if (e.key === "Escape" && !modalRoot.classList.contains("hidden")) closeModal();
     });
 
+    // Mobile menu controls.
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileLinks = document.querySelectorAll(".mobile-link");
     const navLinks = document.querySelectorAll("header nav a[href^='#']");
 
+    // Toggle mobile menu open/closed.
     mobileMenuBtn.addEventListener("click", () => {
       const expanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
       mobileMenuBtn.setAttribute("aria-expanded", String(!expanded));
       mobileMenu.classList.toggle("hidden");
     });
 
+    // Close mobile menu when clicking outside it.
     document.addEventListener("click", (event) => {
       if (mobileMenu.classList.contains("hidden")) return;
       const target = event.target;
@@ -568,6 +611,7 @@
       }
     });
 
+    // Auto-close mobile menu when switching to desktop viewport.
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 768) {
         mobileMenu.classList.add("hidden");
@@ -575,6 +619,7 @@
       }
     });
 
+    // Close mobile menu after selecting any mobile nav link.
     mobileLinks.forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenu.classList.add("hidden");
@@ -582,6 +627,7 @@
       });
     });
 
+    // Reveal-on-scroll observer for all .fade-in elements.
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -590,12 +636,15 @@
       });
     }, { threshold: 0.15 });
 
+    // Register and stagger fade-in animations.
     document.querySelectorAll(".fade-in").forEach((el, idx) => {
       el.style.transitionDelay = `${Math.min(idx * 40, 240)}ms`;
       observer.observe(el);
     });
 
+    // Section list used for active nav-link highlighting while scrolling.
     const sectionIds = ["home", "about", "experience", "projects", "skills"];
+    // Observer that updates nav-link "active" state based on viewport section.
     const navObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -612,11 +661,13 @@
       });
     }, { threshold: 0.5, rootMargin: "-20% 0px -35% 0px" });
 
+    // Attach observer to each navigable section.
     sectionIds.forEach((id) => {
       const section = document.getElementById(id);
       if (section) navObserver.observe(section);
     });
 
+    // Keep footer copyright year current.
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
