@@ -180,6 +180,7 @@
         <a href="#about" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">About</a>
         <a href="#experience" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Experience</a>
         <a href="#projects" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Projects</a>
+        <a href="#personal-projects" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Personal Projects</a>
         <a href="#skills" class="nav-link text-sm font-medium text-slate-200 transition hover:text-emerald-300">Skills</a>
         <a href="resume.pdf" class="rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:scale-[1.02] hover:bg-emerald-300" aria-label="Download resume PDF">
           Download Resume
@@ -193,6 +194,7 @@
         <a href="#about" class="mobile-link text-slate-100">About</a>
         <a href="#experience" class="mobile-link text-slate-100">Experience</a>
         <a href="#projects" class="mobile-link text-slate-100">Projects</a>
+        <a href="#personal-projects" class="mobile-link text-slate-100">Personal Projects</a>
         <a href="#skills" class="mobile-link text-slate-100">Skills</a>
         <a href="resume.pdf" class="rounded-md bg-emerald-400 px-3 py-2 font-semibold text-slate-950">Download Resume</a>
       </div>
@@ -310,6 +312,15 @@
         <p class="mt-2 text-slate-300">Selected projects across healthcare AI, education technology, and full-stack product development.</p>
       </div>
       <div id="projectsGrid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <!-- ======== PERSONAL PROJECTS SECTION (JS-CREATED CARDS) ======== -->
+    <section id="personal-projects" class="section-block fade-in" aria-labelledby="personal-projects-title">
+      <div class="mb-8">
+        <h2 id="personal-projects-title" class="font-display text-3xl font-bold text-white lg:text-4xl">Personal Projects</h2>
+        <p class="mt-2 text-slate-300">Independent projects built from personal curiosity, technical exploration, and real user needs.</p>
+      </div>
+      <div id="personalProjectsGrid" class="grid gap-5 md:grid-cols-2"></div>
     </section>
 
     <!-- ======== SKILLS SECTION ======== -->
@@ -508,9 +519,21 @@
       }
     ];
 
+    // Personal project data source with direct demo and repository links.
+    const personalProjectsData = [
+      {
+        title: "YueSub",
+        description: "A subtitle-focused web app for handling and improving subtitle workflows in a clean browser-based interface.",
+        motivation: "I created YueSub to explore practical tooling for subtitle use cases and ship a focused product that solves a real, everyday content workflow problem.",
+        demo: "https://yuesubv.vercel.app/",
+        repo: "https://github.com/FardinSafi/yuesub"
+      }
+    ];
+
     // Grid mount points where JS injects cards.
     const experienceGrid = document.getElementById("experienceGrid");
     const projectsGrid = document.getElementById("projectsGrid");
+    const personalProjectsGrid = document.getElementById("personalProjectsGrid");
 
     // Build Experience cards and bind each card to modal details.
     experienceData.forEach((exp, index) => {
@@ -552,6 +575,22 @@
 
       `;
       projectsGrid.appendChild(card);
+    });
+
+    // Build Personal Project cards with demo and repository actions.
+    personalProjectsData.forEach((project) => {
+      const card = document.createElement("article");
+      card.className = "glass-card rounded-2xl p-5 transition hover:-translate-y-1 hover:border-emerald-300/50";
+      card.innerHTML = `
+        <h3 class="font-display text-lg font-semibold text-white">${project.title}</h3>
+        <p class="mt-2 text-sm text-slate-300"><span class="font-semibold text-slate-100">Description:</span> ${project.description}</p>
+        <p class="mt-2 text-sm text-slate-300"><span class="font-semibold text-slate-100">Motivation:</span> ${project.motivation}</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a href="${project.demo}" target="_blank" rel="noreferrer" class="rounded-full bg-emerald-400 px-4 py-2 text-xs font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-emerald-300" aria-label="Open live demo for ${project.title}">Demo</a>
+          <a href="${project.repo}" target="_blank" rel="noreferrer" class="rounded-full border border-slate-400/40 px-4 py-2 text-xs font-semibold text-white transition hover:border-emerald-300 hover:text-emerald-200" aria-label="Open GitHub repository for ${project.title}">GitHub</a>
+        </div>
+      `;
+      personalProjectsGrid.appendChild(card);
     });
 
     // Modal element references.
@@ -644,7 +683,7 @@
     });
 
     // Section list used for active nav-link highlighting while scrolling.
-    const sectionIds = ["home", "about", "experience", "projects", "skills"];
+    const sectionIds = ["home", "about", "experience", "projects", "personal-projects", "skills"];
     // Observer that updates nav-link "active" state based on viewport section.
     const navObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
