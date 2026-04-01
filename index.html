@@ -525,6 +525,15 @@
         title: "YueSub",
         description: "A web app for helping create Cantonese subtitles for videos.",
         motivation: "As a cantonese learner, I found it hard to find good subtitles for videos. I built YueSub to make it easier for myself and other learners to create and share Cantonese subtitles.",
+        skills: [
+          "Next.js",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS",
+          "FFmpeg WASM",
+          "Deepgram",
+          "Google Cloud Translation"
+        ],
         demo: "https://yuesubv.vercel.app/",
         repo: "https://github.com/FardinSafi/yuesub"
       },
@@ -532,6 +541,7 @@
         title: "Yeah Buddy Tracker",
         description: "A Ronnie Coleman flavored web app for tracking gym workouts and progress over time.",
         motivation: "I wanted a simple and intuitive way to log my workouts and see my progress. Yeah Buddy Tracker allows users to create workout plans, log exercises, and visualize their fitness journey. The Ronnie Coleman theme is not only a tribute to my favorite bodybuilder but also adds a fun and motivational vibe to the app.",
+        skills: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Auth", "Dexie", "Zustand"],
         demo: "https://yeah-buddy-tracker.vercel.app/",
         repo: "https://github.com/FardinSafi/yeah-buddy-tracker"
       },
@@ -586,19 +596,80 @@
     });
 
     // Build Personal Project cards with demo and repository actions.
-    personalProjectsData.forEach((project) => {
+    const PERSONAL_PROJECT_VISIBLE_SKILLS = 4;
+
+    // Builds skills markup with overflow toggle support for long lists.
+    function buildPersonalProjectSkillsMarkup(skills, projectIndex) {
+      if (!Array.isArray(skills) || skills.length === 0) {
+        return "<p class='mt-2 text-sm text-slate-400'>No tools/skills listed.</p>";
+      }
+
+      const hiddenCount = Math.max(skills.length - PERSONAL_PROJECT_VISIBLE_SKILLS, 0);
+      const skillSpans = skills.map((skill, skillIndex) => {
+        const isHidden = hiddenCount > 0 && skillIndex >= PERSONAL_PROJECT_VISIBLE_SKILLS;
+        return `<span class='rounded-full bg-slate-800/90 px-2.5 py-1 ${isHidden ? "hidden" : ""}' data-skill-item='${projectIndex}'>${skill}</span>`;
+      }).join("");
+
+      if (hiddenCount === 0) {
+        return `<div class='mt-2 flex flex-wrap gap-2 text-xs text-slate-100'>${skillSpans}</div>`;
+      }
+
+      return `
+        <div class='mt-2 flex flex-wrap gap-2 text-xs text-slate-100'>
+          ${skillSpans}
+          <button
+            type='button'
+            class='rounded-full border border-emerald-300/40 bg-emerald-300/10 px-2.5 py-1 font-semibold text-emerald-200 transition hover:border-emerald-300 hover:bg-emerald-300/20'
+            data-skill-toggle='${projectIndex}'
+            data-hidden-count='${hiddenCount}'
+            aria-expanded='false'
+            aria-label='Show all tools and skills'
+          >+ ${hiddenCount} more</button>
+        </div>
+      `;
+    }
+
+    personalProjectsData.forEach((project, projectIndex) => {
       const card = document.createElement("article");
       card.className = "glass-card rounded-2xl p-5 transition hover:-translate-y-1 hover:border-emerald-300/50";
       card.innerHTML = `
         <h3 class="font-display text-lg font-semibold text-white">${project.title}</h3>
         <p class="mt-2 text-sm text-slate-300"><span class="font-semibold text-slate-100">Description:</span> ${project.description}</p>
         <p class="mt-2 text-sm text-slate-300"><span class="font-semibold text-slate-100">Motivation:</span> ${project.motivation}</p>
+        <p class="mt-3 text-sm text-slate-300"><span class="font-semibold text-slate-100">Tools/Skills:</span></p>
+        ${buildPersonalProjectSkillsMarkup(project.skills, projectIndex)}
         <div class="mt-4 flex flex-wrap gap-2">
           <a href="${project.demo}" target="_blank" rel="noreferrer" class="rounded-full bg-emerald-400 px-4 py-2 text-xs font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-emerald-300" aria-label="Open live demo for ${project.title}">Demo</a>
           <a href="${project.repo}" target="_blank" rel="noreferrer" class="rounded-full border border-slate-400/40 px-4 py-2 text-xs font-semibold text-white transition hover:border-emerald-300 hover:text-emerald-200" aria-label="Open GitHub repository for ${project.title}">GitHub</a>
         </div>
       `;
       personalProjectsGrid.appendChild(card);
+    });
+
+    // Toggle hidden tools/skills for personal projects.
+    personalProjectsGrid.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+
+      const toggleBtn = target.closest("button[data-skill-toggle]");
+      if (!(toggleBtn instanceof HTMLButtonElement)) return;
+
+      const projectIndex = toggleBtn.dataset.skillToggle;
+      if (!projectIndex) return;
+
+      const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
+      const skillItems = personalProjectsGrid.querySelectorAll(`[data-skill-item='${projectIndex}']`);
+
+      skillItems.forEach((item, itemIndex) => {
+        if (itemIndex >= PERSONAL_PROJECT_VISIBLE_SKILLS) {
+          item.classList.toggle("hidden", isExpanded);
+        }
+      });
+
+      toggleBtn.setAttribute("aria-expanded", String(!isExpanded));
+      toggleBtn.textContent = isExpanded
+        ? `+ ${toggleBtn.dataset.hiddenCount || 0} more`
+        : "Show less";
     });
 
     // Modal element references.
