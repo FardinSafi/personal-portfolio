@@ -8,7 +8,7 @@ Live site (GitHub Pages):
 ## Project Structure
 
 - `index.html`: Entire website (layout, styles, JavaScript interactivity, data for Experience and Projects)
-- `resume.pdf`: Resume download file linked from navbar and hero
+- `CV_SAFI_FardinAbrar.pdf`: CV download file linked from navbar and hero
 - `headshot.jpg`: Profile image used in the hero section and social preview metadata
 - `prompt.txt`: Original requirements/specification notes
 
